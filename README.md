@@ -4,6 +4,8 @@ Modelo para montar, por projeto, o painel de acompanhamento de um lançamento: m
 
 Cada clone é o painel de **um** lançamento. O que muda entre projetos fica em `lancamento.config.json`; as chaves ficam em `.env.local` e na Vercel.
 
+> **Primeira vez?** Siga o [`COMECE-AQUI.md`](COMECE-AQUI.md): tutorial passo a passo para quem nunca usou repositório nem terminal.
+
 ## Como usar (com um agente)
 
 1. Clone este repositório numa pasta nova e abra nela o Claude Code, o Codex ou outro agente.
