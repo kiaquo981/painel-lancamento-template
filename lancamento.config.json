@@ -1,0 +1,61 @@
+{
+  "slug": "exemplo",
+  "marca": "Nome da Marca · assinatura",
+  "nome": "Nome do Lançamento",
+  "destaque": "",
+  "subtitulo": "Evento ao vivo · 01/01/2027 · 20h",
+  "fuso": "-03:00",
+  "marcaCampanha": "CODIGO",
+  "inicioCaptacao": "2026-12-10",
+  "diaEvento": "2027-01-01",
+  "fases": [
+    { "key": "captacao", "nome": "1 · Captação", "de": "2026-12-10", "ate": "2027-01-01", "aba": "captacao" },
+    { "key": "evento", "nome": "2 · Evento", "de": "2027-01-01", "ate": "2027-01-01", "aba": "evento" },
+    { "key": "carrinho", "nome": "3 · Carrinho", "de": "2027-01-01", "ate": "2027-01-08", "aba": "vendas" },
+    { "key": "pos", "nome": "4 · Pós", "de": "2027-01-09", "ate": null, "aba": "fechamento" }
+  ],
+  "metas": {
+    "custoInscritoAlvo": 10,
+    "custoInscritoTeto": 15,
+    "verbaCaptacao": 10000,
+    "comparecimento": 0.2,
+    "conversaoMin": 0.05,
+    "conversaoMax": 0.1,
+    "ticket": 997,
+    "amostraMinima": 25
+  },
+  "origens": {
+    "pago": ["meta"],
+    "teste": ["teste"],
+    "regras": [{ "nome": "ManyChat", "campo": "utm_medium", "igual": "manychat" }]
+  },
+  "temperatura": { "quente": "\\sQ\\s", "frio": "\\sF\\s" },
+  "tema": {
+    "cores": {
+      "fundo": "#f6f5f2",
+      "cartao": "#ffffff",
+      "borda": "#e4e2dc",
+      "texto": "#26251f",
+      "textoSuave": "#6b6a62",
+      "destaque": "#d9c7a3",
+      "destaqueSuave": "#f3ecdd",
+      "destaqueForte": "#7a5a1e",
+      "secundaria": "#7d7c6c"
+    },
+    "fontes": { "titulo": "Fraunces", "texto": "Inter" }
+  },
+  "banco": { "schema": "exemplo" },
+  "meta": { "contaAnuncios": "act_0000000000" },
+  "inscritos": {
+    "fonte": "webhook",
+    "sheets": {
+      "planilhaId": "",
+      "aba": "Leads",
+      "colunas": { "criadoEm": "Data", "email": "Email", "telefone": "WhatsApp", "utm_source": "utm_source", "utm_medium": "utm_medium", "utm_campaign": "utm_campaign", "utm_content": "utm_content", "utm_term": "utm_term" }
+    },
+    "supabase": {
+      "tabela": "leads",
+      "colunas": { "id": "id", "criadoEm": "created_at", "email": "email", "telefone": "whatsapp", "utm_source": "utm_source", "utm_medium": "utm_medium", "utm_campaign": "utm_campaign", "utm_content": "utm_content", "utm_term": null }
+    }
+  }
+}

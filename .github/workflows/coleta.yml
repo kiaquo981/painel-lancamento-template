@@ -1,0 +1,21 @@
+# Alternativa ao cron da Vercel (o plano Hobby só agenda uma vez por dia).
+# Ative criando no repositório: variável PAINEL_URL e segredo CRON_SECRET. Depois apague "crons" do vercel.json.
+name: coleta
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+jobs:
+  coletar:
+    if: ${{ vars.PAINEL_URL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mídia, inscritos e relatório
+        env:
+          URL: ${{ vars.PAINEL_URL }}
+          SEGREDO: ${{ secrets.CRON_SECRET }}
+        run: |
+          for rota in meta inscritos; do
+            curl -fsS -H "Authorization: Bearer $SEGREDO" "$URL/api/cron/$rota" || echo "falhou: $rota"
+          done
+          if [ "$(date -u +%M)" -lt 15 ]; then curl -fsS -H "Authorization: Bearer $SEGREDO" "$URL/api/cron/relatorio" || echo "falhou: relatorio"; fi

@@ -1,0 +1,7 @@
+{
+  "crons": [
+    { "path": "/api/cron/meta", "schedule": "*/15 * * * *" },
+    { "path": "/api/cron/inscritos", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/relatorio", "schedule": "0 * * * *" }
+  ]
+}
